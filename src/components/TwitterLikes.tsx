@@ -3,6 +3,8 @@ import React, { FC } from 'react'
 import { useQuery } from 'react-query'
 import { STYLE_LINKS } from '../constants'
 import { simpleUrl } from '../simpleUrl'
+import { ColumnHeading } from './ColumnHeading'
+import { Link } from './Link'
 
 const COUNT = 50
 const FEED_PATH = `/api/airtable?base=${process.env.NEXT_PUBLIC_TWITTER_LIKES_BASE}&table=Likes&count=${COUNT}`
@@ -27,18 +29,12 @@ export const TwitterLikes: FC<TwitterLikesProps> = ({ children }) => {
 
   return (
     <div>
-      <h2 className="mb-3 ml-3 text-lg font-medium">Twitter Likes</h2>
+      <ColumnHeading>Twitter Likes</ColumnHeading>
       <ul>
         {records.map(({ id, fields }) => {
           return (
-            <li key={id}>
-              <a href={fields.URL} className={STYLE_LINKS}>
-                {fields.Title}
-                <br />
-                <span className="text-sm text-gray-400">
-                  {simpleUrl(fields.URL)}
-                </span>
-              </a>
+            <li key={id} className="mb-1">
+              <Link url={fields.URL} title={fields.Title} />
             </li>
           )
         })}

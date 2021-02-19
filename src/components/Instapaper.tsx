@@ -3,6 +3,8 @@ import React, { FC } from 'react'
 import { useQuery } from 'react-query'
 import { STYLE_LINKS } from '../constants'
 import { simpleUrl } from '../simpleUrl'
+import { ColumnHeading } from './ColumnHeading'
+import { Link } from './Link'
 
 const FEED_PATH = `https://rsstojson.com/v1/api/?rss_url=https://www.instapaper.com/rss/305104/YzRvSlLTQWV1lz5OjjeEk4Ogl8s`
 
@@ -26,16 +28,12 @@ export const InstapaperUnread: FC<InstapaperUnreadProps> = ({ children }) => {
 
   return (
     <div>
-      <h2 className="mb-3 ml-3 text-lg font-medium">Instapaper unread</h2>
+      <ColumnHeading>Instapaper unread</ColumnHeading>
       <ul>
         {records.map(({ guid, link, title }) => {
           return (
-            <li key={guid}>
-              <a href={link} className={STYLE_LINKS}>
-                {title}
-                <br />
-                <span className="text-sm text-gray-400">{simpleUrl(link)}</span>
-              </a>
+            <li key={guid} className="mb-1">
+              <Link url={link} title={title} />
             </li>
           )
         })}
