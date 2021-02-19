@@ -4,9 +4,10 @@ import { simpleUrl } from '../simpleUrl'
 interface LinkProps extends ComponentPropsWithoutRef<'a'> {
   url: string
   title: string
+  subtitle: string
 }
 
-export const Link: FC<LinkProps> = ({ url, title, ...rest }) => {
+export const Link: FC<LinkProps> = ({ url, title, subtitle, ...rest }) => {
   return (
     <a
       href={url}
@@ -16,7 +17,7 @@ export const Link: FC<LinkProps> = ({ url, title, ...rest }) => {
     >
       {title}
       <br />
-      <span className="text-sm text-gray-400">{simpleUrl(url)}</span>
+      <span className="text-sm text-gray-400">{subtitle}</span>
     </a>
   )
 }

@@ -34,7 +34,11 @@ export const TwitterLikes: FC<TwitterLikesProps> = ({ children }) => {
         {records.map(({ id, fields }) => {
           return (
             <li key={id} className="mb-1">
-              <Link url={fields.URL} title={fields.Title} />
+              <Link
+                url={fields.URL}
+                title={fields.Title}
+                subtitle={simpleUrl(fields.URL)}
+              />
             </li>
           )
         })}

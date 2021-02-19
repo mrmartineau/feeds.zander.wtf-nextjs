@@ -33,7 +33,7 @@ export const InstapaperUnread: FC<InstapaperUnreadProps> = ({ children }) => {
         {records.map(({ guid, link, title }) => {
           return (
             <li key={guid} className="mb-1">
-              <Link url={link} title={title} />
+              <Link url={link} title={title} subtitle={simpleUrl(link)} />
             </li>
           )
         })}
