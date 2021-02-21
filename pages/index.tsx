@@ -15,16 +15,16 @@ export default function Home() {
       </Head>
 
       <main className="mx-auto flex gap-5 md:gap-10 overflow-x-auto">
-        <div className="w-72 flex-none">
+        <div className="w-80 flex-none">
           <AirtableBookmarks />
         </div>
-        <div className="w-72 flex-none">
+        <div className="w-80 flex-none">
           <TwitterLikes />
         </div>
-        <div className="w-72 flex-none">
+        <div className="w-80 flex-none">
           <InstapaperUnread />
         </div>
-        <div className="w-72 flex-none">
+        <div className="w-80 flex-none">
           <GitHubStars />
         </div>
       </main>
