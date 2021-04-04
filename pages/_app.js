@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { Hydrate } from 'react-query/hydration'
 import 'tailwindcss/tailwind.css'
+import '../src/styles.css'
 
 export default function MyApp({ Component, pageProps }) {
   const queryClientRef = React.useRef()

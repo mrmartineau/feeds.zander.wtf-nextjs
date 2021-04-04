@@ -5,7 +5,7 @@ export const ColumnHeading: FC<ComponentPropsWithoutRef<'h2'>> = ({
   ...rest
 }) => {
   return (
-    <h2 className="mb-3 ml-3 text-lg font-medium" {...rest}>
+    <h2 className="mb-3 ml-3 text-lg font-medium dark:text-gray-300" {...rest}>
       {children}
     </h2>
   )
